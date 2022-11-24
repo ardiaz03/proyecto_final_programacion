@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "proyecto_final", "proyecto_final.csproj", "{2579EC9C-ABD8-48B6-980F-75BF4E24A9E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "proyecto_final", "proyecto_final.csproj", "{2579EC9C-ABD8-48B6-980F-75BF4E24A9E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "..\Entidades\Entidades.csproj", "{747D24A3-E97E-49BC-A026-0C0E4780DC87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaDeJuego", "..\LogicaDeJuego\LogicaDeJuego.csproj", "{810E7097-B633-4A26-899C-7FFB8A84E57F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{2579EC9C-ABD8-48B6-980F-75BF4E24A9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2579EC9C-ABD8-48B6-980F-75BF4E24A9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2579EC9C-ABD8-48B6-980F-75BF4E24A9E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{747D24A3-E97E-49BC-A026-0C0E4780DC87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{747D24A3-E97E-49BC-A026-0C0E4780DC87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{747D24A3-E97E-49BC-A026-0C0E4780DC87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{747D24A3-E97E-49BC-A026-0C0E4780DC87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810E7097-B633-4A26-899C-7FFB8A84E57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810E7097-B633-4A26-899C-7FFB8A84E57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810E7097-B633-4A26-899C-7FFB8A84E57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810E7097-B633-4A26-899C-7FFB8A84E57F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
