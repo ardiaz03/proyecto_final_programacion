@@ -1,7 +1,9 @@
 ﻿using Entidades;
+
 namespace LogicaDeJuego
 
 {
+    //logica es las reg;as el juego
     public class Logica
     {
         //propiedades publicas de la clase logica del juego
@@ -10,6 +12,11 @@ namespace LogicaDeJuego
         public Hand manoComputadora;
 
         //Agregar las reglas del juego
+        public void ReglasDelJuego()
+        {
+            Console.WriteLine("tatata");
+        }
+
 
         //Metodo de seleccion del usuario
         public void JugadorSeleccionarPiedra()
