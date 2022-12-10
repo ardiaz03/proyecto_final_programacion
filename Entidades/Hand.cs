@@ -32,7 +32,5 @@ namespace Entidades
         //arreglo para debilidades
         public int[] debilidades;
 
-        //arreglo para empates
-        public int[] empates;
     }
 }

@@ -3,22 +3,16 @@
 namespace LogicaDeJuego
 
 {
-    //logica es las reg;as el juego
+    //logica es las reglas el juego
     public class Logica
     {
-        //propiedades publicas de la clase logica del juego
+        //objeto/propiedad
         public Hand manoJugador;
-
         public Hand manoComputadora;
-
-        //Agregar las reglas del juego
-        public void ReglasDelJuego()
-        {
-            Console.WriteLine("tatata");
-        }
+        public Random generadorNumerosAleatorios;
 
 
-        //Metodo de seleccion del usuario
+        //Metodo de selección del usuario.
         public void JugadorSeleccionarPiedra()
         {
             //piedra es 0   
@@ -116,7 +110,7 @@ namespace LogicaDeJuego
 
 
 
-        //Metodo de seleccion de la computadora
+        //Metodo de selección de la computadora.
 
         public void ComputadorSeleccionarPiedra()
         {
@@ -214,10 +208,49 @@ namespace LogicaDeJuego
         }
 
 
-        //Metodo de comparacion de seleccion de usuario y computadora
+        //Metodo de comparación de seleccion de usuario y computadora
 
         public void ComparacionDeRespuestas()
         {
+            //Situación 1: El jugador tiene una mano que le gana a la mano de la computadora.
+            bool jugadorGano = false;
+
+            for (int i = 0; i < 2; i++)
+            {
+                if (manoJugador.numeroIdentificador == manoComputadora.debilidades[i])
+                {
+                    jugadorGano = true;
+                }
+
+            }
+
+            //Situación 2: La computadora tiene una mano que le gana a la mano del jugador.
+            bool computadorGano = false;
+
+            for(int i = 0; i < 2; i++)
+            {
+                if(manoComputadora.numeroIdentificador == manoJugador.debilidades[i])
+                {
+                    computadorGano = true;
+                }
+            }
+
+            //Situación 3: El jugador y la computadora escogen la misma mano.
+            //Si ambos valores son falsos es un empate
+            if(jugadorGano==false && computadorGano==false)
+            {
+                Console.WriteLine("Se ha detectado un empate");
+            }
+
+            else if (jugadorGano==true)
+            {
+                Console.WriteLine("Usted ha ganado.");
+            }
+
+            else if(computadorGano==true)
+            {
+                Console.WriteLine("Usted ha perdido");
+            }
 
         }
 

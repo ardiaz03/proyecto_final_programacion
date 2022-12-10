@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using LogicaDeJuego;
 
 
 namespace ProyectoFinal
@@ -42,7 +43,13 @@ namespace ProyectoFinal
                 // 006 3-> Iniciar Juego.
                 else if (seleccionDelUsuario == 3)
                 {
-                    
+                    Logica juegoActual = new Logica();
+                    //El jugador configura su mano
+                    juegoActual.JugadorSeleccionarPiedra();
+                    //El computador configura su mano de forma aleatoria
+                    juegoActual.ComputadorSeleccionarPapel();
+                    //El juego comprueba quien ganó.
+                    juegoActual.ComparacionDeRespuestas();
                 }
 
                 // 007 4-> Salir del juego.
@@ -133,9 +140,6 @@ namespace ProyectoFinal
             Console.WriteLine();
             Console.ReadLine();
         }
-
-        // 006 3-> Iniciar Juego.
-       
 
     }
 }
