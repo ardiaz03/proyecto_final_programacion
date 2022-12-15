@@ -8,13 +8,13 @@ namespace Entidades
 {
     public class Hand
     {
-        public string nombreDeSeleccion;
+        public string nombreIdentificador;
 
-        //Piedra
-        //Papel
-        //Tijeras
-        //Salamandra
-        //Spock
+        //"Piedra"
+        //"Papel"
+        //"Tijeras"
+        //"Salamandra"
+        //"Spock"
 
         public int numeroIdentificador;
 
@@ -26,10 +26,12 @@ namespace Entidades
         
 
 
-        //arreglo para fortalezas...se guarda quien le gana a quien
+        //arreglo para fortalezas...se guarda quién le gana a quién
+        //cada elemento va a tener 2 fortalezas
         public int[] fortalezas;
 
         //arreglo para debilidades
+        //cada elemento va a tener 2 debilidades
         public int[] debilidades;
 
     }

@@ -4,9 +4,11 @@ namespace LogicaDeJuego
 
 {
     //logica es las reglas el juego
+    //
+
     public class Logica
     {
-        //objeto/propiedad
+        //Hand es clase y manoJugador es field
         public Hand manoJugador;
         public Hand manoComputadora;
         public Random generadorNumerosAleatorios;
@@ -20,7 +22,7 @@ namespace LogicaDeJuego
             //  debilidades de piedra son papel (1) y spock (4)
             
             manoJugador = new Hand();
-            manoJugador.nombreDeSeleccion = "Piedra";
+            manoJugador.nombreIdentificador = "Piedra";
             manoJugador.numeroIdentificador = 0;
 
             manoJugador.fortalezas = new int[2];
@@ -39,7 +41,7 @@ namespace LogicaDeJuego
             //  debilidades de papel son tijeras (2) y salamandra (3)
             
             manoJugador = new Hand();
-            manoJugador.nombreDeSeleccion = "Papel";
+            manoJugador.nombreIdentificador = "Papel";
             manoJugador.numeroIdentificador = 1;
 
             manoJugador.fortalezas = new int[2];
@@ -58,7 +60,7 @@ namespace LogicaDeJuego
             //  debilidades de tijeras son piedra (0) y Spock (4)
 
             manoJugador = new Hand();
-            manoJugador.nombreDeSeleccion = "Tijeras";
+            manoJugador.nombreIdentificador = "Tijeras";
             manoJugador.numeroIdentificador = 2;
 
             manoJugador.fortalezas = new int[2];
@@ -77,7 +79,7 @@ namespace LogicaDeJuego
             //  debilidades de salamandra son piedra (0) y tijeras (2)
 
             manoJugador = new Hand();
-            manoJugador.nombreDeSeleccion = "Salamandra";
+            manoJugador.nombreIdentificador = "Salamandra";
             manoJugador.numeroIdentificador = 3;
 
             manoJugador.fortalezas = new int[2];
@@ -96,7 +98,7 @@ namespace LogicaDeJuego
             //  debilidades de spock son papel (1) y salamandra (3)
 
             manoJugador = new Hand();
-            manoJugador.nombreDeSeleccion = "Spock";
+            manoJugador.nombreIdentificador = "Spock";
             manoJugador.numeroIdentificador = 4;
 
             manoJugador.fortalezas = new int[2];
@@ -119,7 +121,7 @@ namespace LogicaDeJuego
             //  debilidades de piedra son papel (1) y spock (4)
 
             manoComputadora = new Hand();
-            manoComputadora.nombreDeSeleccion = "Piedra";
+            manoComputadora.nombreIdentificador = "Piedra";
             manoComputadora.numeroIdentificador = 0;
 
             manoComputadora.fortalezas = new int[2];
@@ -138,7 +140,7 @@ namespace LogicaDeJuego
             //  debilidades de papel son tijeras (2) y salamandra (3)
 
             manoComputadora = new Hand();
-            manoComputadora.nombreDeSeleccion = "Papel";
+            manoComputadora.nombreIdentificador = "Papel";
             manoComputadora.numeroIdentificador = 1;
 
             manoComputadora.fortalezas = new int[2];
@@ -157,7 +159,7 @@ namespace LogicaDeJuego
             //  debilidades de tijeras son piedra (0) y Spock (4)
 
             manoComputadora = new Hand();
-            manoComputadora.nombreDeSeleccion = "Tijeras";
+            manoComputadora.nombreIdentificador = "Tijeras";
             manoComputadora.numeroIdentificador = 2;
 
             manoComputadora.fortalezas = new int[2];
@@ -176,7 +178,7 @@ namespace LogicaDeJuego
             //  debilidades de salamandra son piedra (0) y tijeras (2)
 
             manoComputadora = new Hand();
-            manoComputadora.nombreDeSeleccion = "Salamandra";
+            manoComputadora.nombreIdentificador = "Salamandra";
             manoComputadora.numeroIdentificador = 3;
 
             manoComputadora.fortalezas = new int[2];
@@ -195,7 +197,7 @@ namespace LogicaDeJuego
             //  debilidades de spock son papel (1) y salamandra (3)
 
             manoComputadora = new Hand();
-            manoComputadora.nombreDeSeleccion = "Spock";
+            manoComputadora.nombreIdentificador = "Spock";
             manoComputadora.numeroIdentificador = 4;
 
             manoComputadora.fortalezas = new int[2];
@@ -209,7 +211,6 @@ namespace LogicaDeJuego
 
 
         //Metodo de comparación de seleccion de usuario y computadora
-
         public void ComparacionDeRespuestas()
         {
             //Situación 1: El jugador tiene una mano que le gana a la mano de la computadora.
@@ -255,5 +256,7 @@ namespace LogicaDeJuego
         }
 
         //Metodo de reinicio del juego 
+
+        //ComputdoraSeleccionAleatoria
     }
 }

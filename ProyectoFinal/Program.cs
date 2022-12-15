@@ -26,7 +26,7 @@ namespace ProyectoFinal
                 MostrarOpcionesDeSeleccion();
 
                 //Se llama el método y se guarda la variable en seleccionDelUsuario
-                seleccionDelUsuario = CapturarSeleccionDelUsuario();
+                seleccionDelUsuario = CapturarNumero();
 
                 // 004 1-> Método mostrar créditos.
                 if (seleccionDelUsuario==1)
@@ -43,13 +43,9 @@ namespace ProyectoFinal
                 // 006 3-> Iniciar Juego.
                 else if (seleccionDelUsuario == 3)
                 {
-                    Logica juegoActual = new Logica();
-                    //El jugador configura su mano
-                    juegoActual.JugadorSeleccionarPiedra();
-                    //El computador configura su mano de forma aleatoria
-                    juegoActual.ComputadorSeleccionarPapel();
-                    //El juego comprueba quien ganó.
-                    juegoActual.ComparacionDeRespuestas();
+                    Console.WriteLine("Ha escogido iniciar el juego");
+                    Console.ReadLine();
+                    IniciarJuego();
                 }
 
                 // 007 4-> Salir del juego.
@@ -61,7 +57,7 @@ namespace ProyectoFinal
 
                 else
                 {
-                    Console.WriteLine("El valor escrito no forma parte de las opciones del menú");
+                    Console.WriteLine("El valor escrito no forma parte de las opciones del menú.");
                     Console.ReadLine();
                 }
             }
@@ -82,7 +78,7 @@ namespace ProyectoFinal
 
         // 003 Método selección disponible para el usuario-desplegar selecciones.
         // Se procede a capturar la selección del usuario y se guarda.
-        public static int CapturarSeleccionDelUsuario()
+        public static int CapturarNumero()
         {
             try
             {
@@ -92,7 +88,7 @@ namespace ProyectoFinal
             }
             catch
             {
-                Console.WriteLine("Error: Digite un número del 1 al 4");
+                Console.WriteLine("Error: Solo se aceptan los números ofrecidos en la selección.");
                 Console.ReadLine();
                 return -1;
             }
@@ -136,10 +132,72 @@ namespace ProyectoFinal
             Console.WriteLine();
             Console.WriteLine("Al terminar la ronda se pasará a la siguiente");
             Console.WriteLine();
-            Console.WriteLine("si gana la mayoría de rondas, ganará el juego.");
+            Console.WriteLine("Si gana la mayoría de rondas, ganará el juego.");
             Console.WriteLine();
             Console.ReadLine();
         }
+
+        public static void IniciarJuego()
+        {
+            Console.Clear();
+            Console.WriteLine("Digite su selección: ");
+            Console.WriteLine("0 = Piedra");
+            Console.WriteLine("1 = Papel");
+            Console.WriteLine("2 = Tijeras");
+            Console.WriteLine("3 = Salamandra");
+            Console.WriteLine("4 = Spock");
+            
+            Logica juegoActual = new Logica();
+
+           
+            int seleccionDelComputador = 0;
+            int contadorDeRonda = 0;
+
+            //El número de rondas a jugar es de 3
+            int rondas = 3;
+
+            //Se ocupa repetir el loop del juego hasta que llegue al límite de rondas
+
+            for(int l = 0; l<rondas; l++)
+            {
+                //Inicia la ronda, el jugador debe configurar su mano según las opciones disponibles
+                juegoActual.JugadorSeleccionarPiedra();
+
+                //El computador configura su mano
+                if
+                {
+
+                }
+
+            }
+
+
+
+
+
+            //Hacer los condicionales de selección del jugador y los resultados de la computadora.
+
+            //while (seleccionDelJugador==0)
+            //{
+               //static void JugadorSeleccionarPedra();
+                //if (seleccionDelComputador==0)
+                //{
+
+                //}
+
+            //}
+
+
+            //El jugador configura su mano
+            juegoActual.JugadorSeleccionarPiedra();
+            //El computador configura su mano de forma aleatoria
+            juegoActual.ComputadorSeleccionarPapel();
+            //El juego comprueba quien ganó.
+            juegoActual.ComparacionDeRespuestas();
+            Console.ReadLine();
+        }
+        
+
 
     }
 }
