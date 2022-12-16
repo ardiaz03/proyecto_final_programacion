@@ -139,65 +139,280 @@ namespace ProyectoFinal
 
         public static void IniciarJuego()
         {
-            Console.Clear();
-            Console.WriteLine("Digite su selección: ");
-            Console.WriteLine("0 = Piedra");
-            Console.WriteLine("1 = Papel");
-            Console.WriteLine("2 = Tijeras");
-            Console.WriteLine("3 = Salamandra");
-            Console.WriteLine("4 = Spock");
-            
+            //creo la variable para capturar la respuesta del jugador
+            int respuestaDelJugador;
+
+            //se crea una instancia/objeto Logica()
             Logica juegoActual = new Logica();
 
-           
-            int seleccionDelComputador = 0;
-            int contadorDeRonda = 0;
+            //Creo la seleccion Random del computador
+            int seleccionDelComputador = juegoActual.SeleccionAleatoriaComputador();
 
-            //El número de rondas a jugar es de 3
-            int rondas = 3;
+            
 
-            //Se ocupa repetir el loop del juego hasta que llegue al límite de rondas
 
-            for(int l = 0; l<rondas; l++)
+
+            do
             {
-                //Inicia la ronda, el jugador debe configurar su mano según las opciones disponibles
-                juegoActual.JugadorSeleccionarPiedra();
+                //Se indica al jugador la ronda en que se encuentra
+                Console.Clear();
+                Console.WriteLine("Usted de encuentra en la ronda {0}", juegoActual.numeroDeRonda);
+                Console.WriteLine();
+                Console.WriteLine("Digite su selección: ");
+                Console.WriteLine("0 = Piedra");
+                Console.WriteLine("1 = Papel");
+                Console.WriteLine("2 = Tijeras");
+                Console.WriteLine("3 = Salamandra");
+                Console.WriteLine("4 = Spock");
+                Console.WriteLine();
+                respuestaDelJugador = CapturarNumero();
+                seleccionDelComputador = juegoActual.SeleccionAleatoriaComputador();
 
-                //El computador configura su mano
-                if
+                if (respuestaDelJugador == 0)
                 {
+                    //jugador elige piedra                    
+                    juegoActual.JugadorSeleccionarPiedra();
+                    Console.WriteLine("Usted ha seleccionado 'Piedra'");
 
+                    if (seleccionDelComputador == 0)
+                    {
+                        //computador elige piedra
+                        juegoActual.ComputadorSeleccionarPiedra();
+                        Console.WriteLine("El computador seleccionó 'Piedra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 1)
+                    {
+                        //computador elige papel
+                        juegoActual.ComputadorSeleccionarPapel();
+                        Console.WriteLine("El computador seleccionó 'Papel'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 2)
+                    {
+                        //computador elige tijera
+                        juegoActual.ComputadorSeleccionarTijeras();
+                        Console.WriteLine("El computador seleccionó 'Tijeras'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 3)
+                    {
+                        //computador elige salamandra
+                        juegoActual.ComputadorSeleccionarSalamandra();
+                        Console.WriteLine("El computador seleccionó 'Salamandra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else
+                    {
+                        //computador elige Spock
+                        juegoActual.ComputadorSeleccionarSpock();
+                        Console.WriteLine("El computador seleccionó 'Spock'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    
+                }
+                else if (respuestaDelJugador == 1)
+                {
+                    //jugador elige papel
+                    juegoActual.JugadorSeleccionarPapel();
+                    Console.WriteLine("Usted ha seleccionado 'Papel'");
+
+                    if (seleccionDelComputador == 0)
+                    {
+                        //computador elige piedra
+                        juegoActual.ComputadorSeleccionarPiedra();
+                        Console.WriteLine("El computador seleccionó 'Piedra'");
+                        juegoActual.ComparacionDeRespuestas();
+                    }
+                    else if (seleccionDelComputador == 1)
+                    {
+                        //computador elige papel
+                        juegoActual.ComputadorSeleccionarPapel();
+                        Console.WriteLine("El computador seleccionó 'Papel'");
+                        juegoActual.ComparacionDeRespuestas();
+                    }
+                    else if (seleccionDelComputador == 2)
+                    {
+                        //computador elige tijera
+                        juegoActual.ComputadorSeleccionarTijeras();
+                        Console.WriteLine("El computador seleccionó 'Tijeras'");
+                        juegoActual.ComparacionDeRespuestas();
+                    }
+                    else if (seleccionDelComputador == 3)
+                    {
+                        //computador elige salamandra
+                        juegoActual.ComputadorSeleccionarSalamandra();
+                        Console.WriteLine("El computador seleccionó 'Salamandra'");
+                        juegoActual.ComparacionDeRespuestas();
+                    }
+                    else
+                    {
+                        //computador elige Spock
+                        juegoActual.ComputadorSeleccionarSpock();
+                        Console.WriteLine("El computador seleccionó 'Spock'");
+                        juegoActual.ComparacionDeRespuestas();
+                    }
+                    juegoActual.SubirDeRonda();
+                }
+                else if (respuestaDelJugador == 2)
+                {
+                    //jugador elige tijera
+                    juegoActual.JugadorSeleccionarTijeras();
+                    Console.WriteLine("Usted ha seleccionado 'Tijeras'");
+
+                    if (seleccionDelComputador == 0)
+                    {
+                        //computador elige piedra
+                        juegoActual.ComputadorSeleccionarPiedra();
+                        Console.WriteLine("El computador seleccionó 'Piedra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 1)
+                    {
+                        //computador elige papel
+                        juegoActual.ComputadorSeleccionarPapel();
+                        Console.WriteLine("El computador seleccionó 'Papel'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 2)
+                    {
+                        //computador elige tijera
+                        juegoActual.ComputadorSeleccionarTijeras();
+                        Console.WriteLine("El computador seleccionó 'Tijeras'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 3)
+                    {
+                        //computador elige salamandra
+                        juegoActual.ComputadorSeleccionarSalamandra();
+                        Console.WriteLine("El computador seleccionó 'Salamandra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else
+                    {
+                        //computador elige Spock
+                        juegoActual.ComputadorSeleccionarSpock();
+                        Console.WriteLine("El computador seleccionó 'Spock'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    
+                }
+                else if (respuestaDelJugador == 3)
+                {
+                    //jugador elige salamandra
+                    juegoActual.JugadorSeleccionarSalamandra();
+                    Console.WriteLine("Usted ha seleccionado 'Salamandra'");
+
+                    if (seleccionDelComputador == 0)
+                    {
+                        //computador elige piedra
+                        juegoActual.ComputadorSeleccionarPiedra();
+                        Console.WriteLine("El computador seleccionó 'Piedra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 1)
+                    {
+                        //computador elige papel
+                        juegoActual.ComputadorSeleccionarPapel();
+                        Console.WriteLine("El computador seleccionó 'Papel'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 2)
+                    {
+                        //computador elige tijera
+                        juegoActual.ComputadorSeleccionarTijeras();
+                        Console.WriteLine("El computador seleccionó 'Tijeras'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 3)
+                    {
+                        //computador elige salamandra
+                        juegoActual.ComputadorSeleccionarSalamandra();
+                        Console.WriteLine("El computador seleccionó 'Salamandra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else
+                    {
+                        //computador elige Spock
+                        juegoActual.ComputadorSeleccionarSpock();
+                        Console.WriteLine("El computador seleccionó 'Spock'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    
+                }
+                else if (respuestaDelJugador == 4)
+                {
+                    //jugador elige Spock
+                    juegoActual.JugadorSeleccionarSpock();
+                    Console.WriteLine("Usted ha seleccionado 'Spock'");
+
+                    if (seleccionDelComputador == 0)
+                    {
+                        //computador elige piedra
+                        juegoActual.ComputadorSeleccionarPiedra();
+                        Console.WriteLine("El computador seleccionó 'Piedra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 1)
+                    {
+                        //computador elige papel
+                        juegoActual.ComputadorSeleccionarPapel();
+                        Console.WriteLine("El computador seleccionó 'Papel'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 2)
+                    {
+                        //computador elige tijera
+                        juegoActual.ComputadorSeleccionarTijeras();
+                        Console.WriteLine("El computador seleccionó 'Tijeras'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else if (seleccionDelComputador == 3)
+                    {
+                        //computador elige salamandra
+                        juegoActual.ComputadorSeleccionarSalamandra();
+                        Console.WriteLine("El computador seleccionó 'Salamandra'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    else
+                    {
+                        //computador elige Spock
+                        juegoActual.ComputadorSeleccionarSpock();
+                        Console.WriteLine("El computador seleccionó 'Spock'");
+                        juegoActual.ComparacionDeRespuestas();
+                        juegoActual.SubirDeRonda();
+                    }
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Por favor digite un número del 0 al 4");
                 }
 
-            }
+            } while (juegoActual.numeroDeRonda < 4);
 
-
-
-
-
-            //Hacer los condicionales de selección del jugador y los resultados de la computadora.
-
-            //while (seleccionDelJugador==0)
-            //{
-               //static void JugadorSeleccionarPedra();
-                //if (seleccionDelComputador==0)
-                //{
-
-                //}
-
-            //}
-
-
-            //El jugador configura su mano
-            juegoActual.JugadorSeleccionarPiedra();
-            //El computador configura su mano de forma aleatoria
-            juegoActual.ComputadorSeleccionarPapel();
-            //El juego comprueba quien ganó.
-            juegoActual.ComparacionDeRespuestas();
-            Console.ReadLine();
+            
+                       
         }
         
-
-
     }
 }

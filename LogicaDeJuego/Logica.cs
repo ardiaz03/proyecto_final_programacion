@@ -12,6 +12,19 @@ namespace LogicaDeJuego
         public Hand manoJugador;
         public Hand manoComputadora;
         public Random generadorNumerosAleatorios;
+        public int numeroDeRonda = 1;//es como el nivelDeDificultad para ProgresarJuego()
+        public int numeroRandomComputadora; //es como el numeroDePregunta para el Random
+
+        //Metodo constructor > este metodo es el primero en iniciar en la clase
+        public Logica()
+        {
+
+            //Se crea el objeto que da numeros aleatorios
+            generadorNumerosAleatorios = new Random();
+
+            //Entrega un numero aleatorio de 0 a 5
+            numeroRandomComputadora = generadorNumerosAleatorios.Next(0, 5);
+        }
 
 
         //Metodo de selección del usuario.
@@ -20,7 +33,7 @@ namespace LogicaDeJuego
             //piedra es 0   
             //  fortalezas de piedra son tijeras (2) y salamandra (3)
             //  debilidades de piedra son papel (1) y spock (4)
-            
+
             manoJugador = new Hand();
             manoJugador.nombreIdentificador = "Piedra";
             manoJugador.numeroIdentificador = 0;
@@ -31,7 +44,7 @@ namespace LogicaDeJuego
 
             manoJugador.debilidades = new int[2];
             manoJugador.debilidades[0] = 1;
-            manoJugador.debilidades[1] = 4;        
+            manoJugador.debilidades[1] = 4;
         }
 
         public void JugadorSeleccionarPapel()
@@ -39,7 +52,7 @@ namespace LogicaDeJuego
             //1 es papel
             //  fortalezas de papel son piedra (0) y Spock (4)
             //  debilidades de papel son tijeras (2) y salamandra (3)
-            
+
             manoJugador = new Hand();
             manoJugador.nombreIdentificador = "Papel";
             manoJugador.numeroIdentificador = 1;
@@ -211,6 +224,7 @@ namespace LogicaDeJuego
 
 
         //Metodo de comparación de seleccion de usuario y computadora
+        //Esto es para una ronda solamente
         public void ComparacionDeRespuestas()
         {
             //Situación 1: El jugador tiene una mano que le gana a la mano de la computadora.
@@ -228,9 +242,9 @@ namespace LogicaDeJuego
             //Situación 2: La computadora tiene una mano que le gana a la mano del jugador.
             bool computadorGano = false;
 
-            for(int i = 0; i < 2; i++)
+            for (int i = 0; i < 2; i++)
             {
-                if(manoComputadora.numeroIdentificador == manoJugador.debilidades[i])
+                if (manoComputadora.numeroIdentificador == manoJugador.debilidades[i])
                 {
                     computadorGano = true;
                 }
@@ -238,25 +252,43 @@ namespace LogicaDeJuego
 
             //Situación 3: El jugador y la computadora escogen la misma mano.
             //Si ambos valores son falsos es un empate
-            if(jugadorGano==false && computadorGano==false)
+            if (jugadorGano == false && computadorGano == false)
             {
                 Console.WriteLine("Se ha detectado un empate");
+                Console.ReadLine();
             }
 
-            else if (jugadorGano==true)
+            else if (jugadorGano == true)
             {
                 Console.WriteLine("Usted ha ganado.");
+                Console.ReadLine();
             }
 
-            else if(computadorGano==true)
+            else if (computadorGano == true)
             {
-                Console.WriteLine("Usted ha perdido");
+                Console.WriteLine("Usted ha perdido.");
+                Console.ReadLine();
             }
 
         }
 
-        //Metodo de reinicio del juego 
+        //Metodo de progresar el juego para el cambio de la ronda
+        public void SubirDeRonda() //Es como el ProgresarJuego()
+        {
+            numeroDeRonda ++;
+            numeroRandomComputadora = generadorNumerosAleatorios.Next(0, 5);
+            Console.WriteLine("{0}", numeroDeRonda);
+            
+        }
 
-        //ComputdoraSeleccionAleatoria
+        //Metodo de seleccion aleatoria del computador
+        public int SeleccionAleatoriaComputador()
+        {
+            generadorNumerosAleatorios = new Random();
+            return numeroRandomComputadora = generadorNumerosAleatorios.Next(0, 5);
+        }
+
+
+
     }
 }

@@ -24,8 +24,6 @@ namespace Entidades
         // 3 = Salamandra
         // 4 = Spock
         
-
-
         //arreglo para fortalezas...se guarda quién le gana a quién
         //cada elemento va a tener 2 fortalezas
         public int[] fortalezas;
